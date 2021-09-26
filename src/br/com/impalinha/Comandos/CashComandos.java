@@ -1,20 +1,65 @@
 package br.com.impalinha.Comandos;
 
+import br.com.impalinha.Service.CashKey.CashKey;
+import br.com.impalinha.Service.CashKey.Metodos.GerarKey;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import br.com.impalinha.Constantes;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+
+import static br.com.impalinha.Constantes.COMMAND_NAME;
+import static br.com.impalinha.Constantes.PERMISSION_ADMIN;
 
 public class CashComandos implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String str, String[] args) {
-		if(command.getName().equalsIgnoreCase("cash")) {
+		if(command.getName().equalsIgnoreCase(COMMAND_NAME)) {
 			Player player = (Player) sender;
-			if(player.hasPermission(new Constantes().permissionAdmin)) {
-				
+			if (args.length == 0) {
+				player.sendMessage(" ");
+				player.sendMessage("§e§o- §a§oLista de Comandos §e§o-");
+				player.sendMessage(" ");
+				player.sendMessage("§f» §e Cash enviar [Jogador] [Quantidade]");
+				player.sendMessage("§f» §e Cash ativar [Codigo]");
+				player.sendMessage("§f» §e Cash mostrar [Jogador]");
+				player.sendMessage("§f» §e Cash ? §fVeja a importância dessa moeda no servidor.");
+				player.sendMessage(" ");
+				if(player.hasPermission(PERMISSION_ADMIN)) {
+					player.sendMessage(" ");
+					player.sendMessage("§c - Apenas para Admins  - ");
+					player.sendMessage(" ");
+					player.sendMessage("§f» §c Cash remove [Jogador] [Quantidade]");
+					player.sendMessage("§f» §c Cash set [Jogador] [Quantidade]");
+					player.sendMessage("§f» §c Cash add [Jogador] [Quantidade]");
+					player.sendMessage("§f» §c Cash gerar [Quantidade] [Dias]");
+					player.sendMessage(" ");
+				}
+			} else {
+				if (player.hasPermission(PERMISSION_ADMIN)) {
+					if (args[0].equalsIgnoreCase("gerar")) {
+						if (args.length == 3) {
+							try {
+								BigDecimal valor = new BigDecimal(args[1]);
+								int dias = Integer.parseInt(args[2]);
+								final LocalDateTime date = LocalDateTime.now();
+								CashKey cashKey = new CashKey(GerarKey.gerarKey(), valor, date.plusDays(dias));
+								cashKey.salvar();
+								player.sendMessage("§aVocê gerou uma nova Key: §b" + cashKey.getCodigo());
+								player.sendMessage("§cEssa key irá se expirar em: " + date.plusDays(dias));
+							} catch (Exception e) {
+								player.sendMessage("§cUse o formato correto! Ex:. /cash gerar 250.00 15");
+								e.printStackTrace();
+							}
+						} else {
+							player.sendMessage("§cUso correto: /cash gerar [Quantidade] [Dias]");
+						}
+					}
+				}
 			}
 		}
 		return false;

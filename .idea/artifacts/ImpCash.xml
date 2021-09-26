@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ImpCash">
+    <output-path>$PROJECT_DIR$/out/artifacts/ImpCash</output-path>
+    <root id="archive" name="ImpCash.jar">
+      <element id="module-output" name="ImpCash" />
+      <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
+    </root>
+  </artifact>
+</component>
