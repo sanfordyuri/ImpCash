@@ -1,5 +1,6 @@
 package br.com.impalinha.Comandos;
 
+import br.com.impalinha.Comandos.Metodos.ComandosModificacao;
 import br.com.impalinha.Service.CashKey.CashKey;
 import br.com.impalinha.Service.CashKey.Metodos.GerarKey;
 import br.com.impalinha.Service.Db.Metodos.Modificacao;
@@ -66,12 +67,43 @@ public class CashComandos implements CommandExecutor {
 								Player alvo = Bukkit.getPlayer(args[1]);
 								BigDecimal amount = new BigDecimal(args[2]);
 								Modificacao.setCash(alvo, amount);
-								alvo.sendMessage(PREFIXO + "§aForças maiores enviaram " + amount + " §bZoneCash §apara você.");
+								alvo.sendMessage(PREFIXO + "§aForças maiores definiram seu saldo para §b" + Modificacao.getCash(player) + " ZoneCash");
 								player.sendMessage(PREFIXO + "§aSaldo enviado com sucesso para §f" +alvo.getName());
 							} catch (Exception e) {
 								player.sendMessage("§cUse o formato correto! Ex:. /cash set [Jogador] [Quantidade]");
 								e.printStackTrace();
 							}
+						} else {
+							player.sendMessage("§cUse o formato correto! Ex:. /cash set [Jogador] [Quantidade]");
+						}
+					} else if (args[0].equalsIgnoreCase("remove")) {
+						if (args.length == 3) {
+							try {
+								Player alvo = Bukkit.getPlayer(args[1]);
+								BigDecimal amount = new BigDecimal(args[2]);
+								ComandosModificacao.removeCash(alvo, amount);
+								player.sendMessage(PREFIXO + "§aSaldo removido com sucesso para §f" +alvo.getName());
+							} catch (Exception e) {
+								player.sendMessage("§cUse o formato correto! Ex:. /cash remove [Jogador] [Quantidade]");
+								e.printStackTrace();
+							}
+						} else {
+							player.sendMessage("§cUse o formato correto! Ex:. /cash remove [Jogador] [Quantidade]");
+						}
+					} else if (args[0].equalsIgnoreCase("add")) {
+						if (args.length == 3) {
+							try {
+								Player alvo = Bukkit.getPlayer(args[1]);
+								BigDecimal amount = new BigDecimal(args[2]);
+								ComandosModificacao.addCash(alvo, amount);
+								player.sendMessage(PREFIXO + "§aSaldo adicionado com sucesso para §f" +alvo.getName());
+								alvo.sendMessage(PREFIXO + "§aForças maiores enviaram §b" + amount + " ZoneCash §apara você.");
+							} catch (Exception e) {
+								player.sendMessage("§cUse o formato correto! Ex:. /cash add [Jogador] [Quantidade]");
+								e.printStackTrace();
+							}
+						} else {
+							player.sendMessage("§cUse o formato correto! Ex:. /cash add [Jogador] [Quantidade]");
 						}
 					}
 				}
