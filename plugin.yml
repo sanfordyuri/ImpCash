@@ -1,0 +1,6 @@
+name: ImpCash
+main: br.com.impalinha.Main
+version: 1.0
+author: Impalinha
+commands:
+  cash:
