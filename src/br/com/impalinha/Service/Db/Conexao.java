@@ -52,14 +52,14 @@ public class Conexao {
     public static void createTable() {
         if(con != null) {
             PreparedStatement stm = null;
-            String sql = "CREATE TABLE IF NOT EXISTS `ImpCash`(`Player` VARCHAR(24), `Amount` DOUBLE)";
+            String sql = "CREATE TABLE IF NOT EXISTS `ImpCash`(`Player` VARCHAR(64), `Amount` DOUBLE)";
             try {
                 stm = con.prepareStatement(sql);
                 stm.executeUpdate();
-                plugin.getLogger().info(PREFIXO + "§aTabela criada com sucesso.");
+                plugin.getLogger().info(PREFIXO + "§aTabela carregada com sucesso.");
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
-                plugin.getLogger().info(PREFIXO + "§cErro ao criar tabela.");
+                plugin.getLogger().info(PREFIXO + "§cErro ao carregar tabela.");
             }
         }
     }

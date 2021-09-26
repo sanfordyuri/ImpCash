@@ -7,16 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47d66528-780f-4d46-97de-18abc134a7d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Metodos/Verificacoes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/ImpCash/ImpCash.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ImpCash/ImpCash.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Constantes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Constantes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Constantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Constantes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Eventos/JoinEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Eventos/JoinEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Service/Db/Conexao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Service/Db/Conexao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Service/Db/Metodos/Criacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Service/Db/Metodos/Criacao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Eventos/JoinEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Eventos/JoinEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Conexao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Conexao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Metodos/Criacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Metodos/Criacao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
