@@ -6,6 +6,8 @@ import br.com.impalinha.Service.Db.Conexao;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import static br.com.impalinha.Constantes.COMMAND_NAME;
+
 public class Main extends JavaPlugin {
 	
 	@Override
@@ -13,7 +15,7 @@ public class Main extends JavaPlugin {
 		Conexao.open();
 		LoadConfig();
 		Bukkit.getPluginManager().registerEvents(new JoinEvent(), this);
-		getCommand("cash").setExecutor(new CashComandos());
+		getCommand(COMMAND_NAME).setExecutor(new CashComandos());
 		getLogger().info("§aO plugin foi iniciado com sucesso.");
 	}
 	

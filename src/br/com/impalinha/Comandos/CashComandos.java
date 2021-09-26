@@ -2,6 +2,9 @@ package br.com.impalinha.Comandos;
 
 import br.com.impalinha.Service.CashKey.CashKey;
 import br.com.impalinha.Service.CashKey.Metodos.GerarKey;
+import br.com.impalinha.Service.Db.Metodos.Modificacao;
+import br.com.impalinha.Service.Db.Metodos.Verificacoes;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -10,9 +13,7 @@ import org.bukkit.entity.Player;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-
-import static br.com.impalinha.Constantes.COMMAND_NAME;
-import static br.com.impalinha.Constantes.PERMISSION_ADMIN;
+import static br.com.impalinha.Constantes.*;
 
 public class CashComandos implements CommandExecutor {
 
@@ -29,6 +30,7 @@ public class CashComandos implements CommandExecutor {
 				player.sendMessage("§f» §e Cash mostrar [Jogador]");
 				player.sendMessage("§f» §e Cash ? §fVeja a importância dessa moeda no servidor.");
 				player.sendMessage(" ");
+				player.sendMessage("§bVocê possui §f" + Modificacao.getCash(player) + " §bZoneCash.");
 				if(player.hasPermission(PERMISSION_ADMIN)) {
 					player.sendMessage(" ");
 					player.sendMessage("§c - Apenas para Admins  - ");
@@ -57,6 +59,19 @@ public class CashComandos implements CommandExecutor {
 							}
 						} else {
 							player.sendMessage("§cUso correto: /cash gerar [Quantidade] [Dias]");
+						}
+					} else if (args[0].equalsIgnoreCase("set")) {
+						if (args.length == 3) {
+							try {
+								Player alvo = Bukkit.getPlayer(args[1]);
+								BigDecimal amount = new BigDecimal(args[2]);
+								Modificacao.setCash(alvo, amount);
+								alvo.sendMessage(PREFIXO + "§aForças maiores enviaram " + amount + " §bZoneCash §apara você.");
+								player.sendMessage(PREFIXO + "§aSaldo enviado com sucesso para §f" +alvo.getName());
+							} catch (Exception e) {
+								player.sendMessage("§cUse o formato correto! Ex:. /cash set [Jogador] [Quantidade]");
+								e.printStackTrace();
+							}
 						}
 					}
 				}
