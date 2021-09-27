@@ -7,8 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47d66528-780f-4d46-97de-18abc134a7d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/br/com/impalinha/Comandos/Metodos/ComandosModificacao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/br/com/impalinha/Config/ModificacaoConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/ImpCash/ImpCash.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ImpCash/ImpCash.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Comandos/CashComandos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Comandos/CashComandos.class" afterDir="false" />

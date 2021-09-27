@@ -1,10 +1,10 @@
 package br.com.impalinha.Comandos;
 
 import br.com.impalinha.Comandos.Metodos.ComandosModificacao;
+import br.com.impalinha.Config.ModificacaoConfig;
 import br.com.impalinha.Service.CashKey.CashKey;
 import br.com.impalinha.Service.CashKey.Metodos.GerarKey;
 import br.com.impalinha.Service.Db.Metodos.Modificacao;
-import br.com.impalinha.Service.Db.Metodos.Verificacoes;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -43,6 +43,48 @@ public class CashComandos implements CommandExecutor {
 					player.sendMessage(" ");
 				}
 			} else {
+				if (args[0].equalsIgnoreCase("mostrar")) {
+					if (args.length == 2) {
+						Player alvo = Bukkit.getPlayer(args[1]);
+						player.sendMessage(PREFIXO+"§f" + alvo.getName() + " §apossui " + Modificacao.getCash(alvo) + " ZoneCash.");
+					} else {
+						player.sendMessage("§cUse o formato correto! Ex:. /cash mostrar [Jogador]");
+					}
+				} else if(args[0].equalsIgnoreCase("ativar")) {
+					if (args.length == 2) {
+						String codigo = args[1];
+						if(ModificacaoConfig.containsCodigo(codigo)) {
+							BigDecimal valor = ModificacaoConfig.getValor(codigo);
+							ComandosModificacao.addCash(player, valor);
+							player.sendMessage(PREFIXO + "§aZoneCash ativado com sucesso.");
+							player.sendMessage("§bO seu novo saldo é de " + Modificacao.getCash(player) + " ZoneCash.");
+							ModificacaoConfig.removerCodigo(codigo);
+						} else {
+							player.sendMessage(PREFIXO + "§cEsse código é invalido.");
+						}
+					} else {
+						player.sendMessage(PREFIXO + "§cUso correto: /cash ativar [Codigo]");
+					}
+				} else if (args[0].equalsIgnoreCase("enviar")) {
+					if (args.length == 3) {
+						try {
+							Player alvo = Bukkit.getPlayer(args[1]);
+							BigDecimal quantia = new BigDecimal(args[2]);
+							if(Modificacao.getCash(player).compareTo(quantia) >= 0) {
+								ComandosModificacao.removeCash(player, quantia);
+								ComandosModificacao.addCash(alvo, quantia);
+								player.sendMessage(PREFIXO + "§aVocê enviou §b" + quantia + " ZoneCash §apara " + alvo.getName());
+								alvo.sendMessage(PREFIXO + player.getName() + "§aenviou §b" + quantia + " ZoneCash §apara você.");
+							} else {
+								player.sendMessage(PREFIXO + "§cVocê nao possui saldo o suficiente.");
+							}
+						} catch (Exception e) {
+							player.sendMessage("§cUse o formato correto! Ex:. /cash enviar HadyMan 250");
+						}
+					} else {
+						player.sendMessage("§cUse o formato correto! Ex:. /cash enviar HadyMan 250");
+					}
+				}
 				if (player.hasPermission(PERMISSION_ADMIN)) {
 					if (args[0].equalsIgnoreCase("gerar")) {
 						if (args.length == 3) {
