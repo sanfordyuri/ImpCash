@@ -6,6 +6,7 @@ import br.com.impalinha.Service.CashKey.CashKey;
 import br.com.impalinha.Service.CashKey.Metodos.GerarKey;
 import br.com.impalinha.Service.Db.Metodos.Modificacao;
 import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -14,6 +15,7 @@ import org.bukkit.entity.Player;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+import static br.com.impalinha.Comandos.Mensagens.ComandosMensagens.mensagemCashForPlayers;
 import static br.com.impalinha.Constantes.*;
 
 public class CashComandos implements CommandExecutor {
@@ -23,29 +25,25 @@ public class CashComandos implements CommandExecutor {
 		if(command.getName().equalsIgnoreCase(COMMAND_NAME)) {
 			Player player = (Player) sender;
 			if (args.length == 0) {
-				player.sendMessage(" ");
-				player.sendMessage("§e§o- §a§oLista de Comandos §e§o-");
-				player.sendMessage(" ");
-				player.sendMessage("§f» §e Cash enviar [Jogador] [Quantidade]");
-				player.sendMessage("§f» §e Cash ativar [Codigo]");
-				player.sendMessage("§f» §e Cash mostrar [Jogador]");
-				player.sendMessage("§f» §e Cash ? §fVeja a importância dessa moeda no servidor.");
-				player.sendMessage(" ");
-				player.sendMessage("§bVocê possui §f" + Modificacao.getCash(player) + " §bZoneCash.");
+				mensagemCashForPlayers(player);
 				if(player.hasPermission(PERMISSION_ADMIN)) {
-					player.sendMessage(" ");
-					player.sendMessage("§c - Apenas para Admins  - ");
-					player.sendMessage(" ");
-					player.sendMessage("§f» §c Cash remove [Jogador] [Quantidade]");
-					player.sendMessage("§f» §c Cash set [Jogador] [Quantidade]");
-					player.sendMessage("§f» §c Cash add [Jogador] [Quantidade]");
-					player.sendMessage("§f» §c Cash gerar [Quantidade] [Dias]");
-					player.sendMessage(" ");
+					mensagemCashForAdmins(player);
 				}
 			} else {
-				if (args[0].equalsIgnoreCase("mostrar")) {
+				if (args[0].equalsIgnoreCase("?")) {
+					if (args.length == 1) {
+						player.sendMessage(PREFIXO+"§fOlá, " + player.getName() + ", vou tentar resumir para você a importância do ZoneCash");
+						player.sendMessage(" ");
+						player.sendMessage(" §9» §fEssa é a moeda de troca mais valiosa no servidor inteiro");
+						player.sendMessage(" §9» §fSe você tem ZoneCash o suficiente pode adquirir §BVIPs");
+						player.sendMessage(" §9» §fEm TODOS os eventos você terá vantagens proporcional ao seu Cash");
+						player.sendMessage(" §9» §fCom Cash você pode comprar §nTicket§r §fpara Eventos Exclusivos");
+						player.sendMessage("  ");
+						player.sendMessage(" §9» §eEntendeu agora? não perca tempo e adquira logo, com qualquer valor!");
+					}
+				} else if (args[0].equalsIgnoreCase("mostrar")) {
 					if (args.length == 2) {
-						Player alvo = Bukkit.getPlayer(args[1]);
+						OfflinePlayer alvo = Bukkit.getOfflinePlayer(args[1]);
 						player.sendMessage(PREFIXO+"§f" + alvo.getName() + " §apossui " + Modificacao.getCash(alvo) + " ZoneCash.");
 					} else {
 						player.sendMessage("§cUse o formato correto! Ex:. /cash mostrar [Jogador]");
@@ -153,5 +151,7 @@ public class CashComandos implements CommandExecutor {
 		}
 		return false;
 	}
+
+
 
 }

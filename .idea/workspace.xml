@@ -7,11 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47d66528-780f-4d46-97de-18abc134a7d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/br/com/impalinha/Config/ModificacaoConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/br/com/impalinha/Comandos/Mensagens/ComandosMensagens.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/ImpCash/ImpCash.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ImpCash/ImpCash.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Comandos/CashComandos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Comandos/CashComandos.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Comandos/CashComandos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Comandos/CashComandos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Comandos/Metodos/ComandosModificacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Comandos/Metodos/ComandosModificacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Config/ModificacaoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Config/ModificacaoConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Constantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Constantes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Metodos/Modificacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Metodos/Modificacao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

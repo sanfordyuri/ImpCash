@@ -1,6 +1,7 @@
 package br.com.impalinha;
 
 import br.com.impalinha.Comandos.CashComandos;
+import br.com.impalinha.Config.ModificacaoConfig;
 import br.com.impalinha.Eventos.JoinEvent;
 import br.com.impalinha.Service.Db.Conexao;
 import org.bukkit.Bukkit;
@@ -14,6 +15,7 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		Conexao.open();
 		LoadConfig();
+		ModificacaoConfig.verificarKeysExpiradas();
 		Bukkit.getPluginManager().registerEvents(new JoinEvent(), this);
 		getCommand(COMMAND_NAME).setExecutor(new CashComandos());
 		getLogger().info("§aO plugin foi iniciado com sucesso.");

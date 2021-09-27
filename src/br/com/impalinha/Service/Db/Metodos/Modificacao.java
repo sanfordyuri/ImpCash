@@ -1,6 +1,7 @@
 package br.com.impalinha.Service.Db.Metodos;
 
 import br.com.impalinha.Service.Db.Conexao;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
 import java.math.BigDecimal;
@@ -10,7 +11,7 @@ import java.sql.SQLException;
 
 public class Modificacao extends Conexao {
 
-    public static BigDecimal getCash(Player player) {
+    public static BigDecimal getCash(OfflinePlayer player) {
         PreparedStatement stm = null;
         try {
             stm = con.prepareStatement("SELECT `Amount` FROM `ImpCash` WHERE `Player` = ?");
@@ -26,7 +27,7 @@ public class Modificacao extends Conexao {
         }
     }
 
-    public static void setCash(Player player, BigDecimal amount) {
+    public static void setCash(OfflinePlayer player, BigDecimal amount) {
         PreparedStatement stm = null;
         try {
             stm = con.prepareStatement("UPDATE `ImpCash` SET `Amount` = ? WHERE `Player` = ?");
