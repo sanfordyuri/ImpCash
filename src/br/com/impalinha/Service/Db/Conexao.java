@@ -8,28 +8,25 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import static br.com.impalinha.Constantes.PREFIXO;
+import static br.com.impalinha.Constantes.*;
+import static br.com.impalinha.Service.Db.Metodos.Mensagens.*;
 
 public class Conexao {
 
-    public static Plugin plugin = Main.getPlugin(Main.class);
+    public static final Plugin plugin = Main.getPlugin(Main.class);
     public static Connection con = null;
 
     public static void open() {
-        String ip = plugin.getConfig().getString("Mysql.ip-andress");
-        String user = plugin.getConfig().getString("Mysql.user");
-        String pass = plugin.getConfig().getString("Mysql.password");
+        String ip = plugin.getConfig().getString(MYSQL_IP_ANDRESS);
+        String user = plugin.getConfig().getString(MYSQL_USER);
+        String pass = plugin.getConfig().getString(MYSQL_PASSWORD);
         try {
-            con = DriverManager.getConnection("jdbc:mysql://" + ip + ":3306/sql10440256", user, pass);
-            plugin.getLogger().info("------------------------------------");
-            plugin.getLogger().info(PREFIXO + "§aAberta com sucesso a conexão Mysql");
-            plugin.getLogger().info("------------------------------------");
+            con = DriverManager.getConnection(JDBC_MYSQL + ip + SQL_10440256, user, pass);
+            conexaoAbertaMsg();
             createTable();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-            plugin.getLogger().info("-----------------------------------------------------------");
-            plugin.getLogger().info(PREFIXO + "§cTivemos um problema ao tentar realizar a conexão Mysql");
-            plugin.getLogger().info("-----------------------------------------------------------");
+            problemaNaConexaoMsg();
         }
     }
 
@@ -37,29 +34,24 @@ public class Conexao {
         if(con!=null) {
             try {
                 con.close();
-                plugin.getLogger().info("------------------------------------");
-                plugin.getLogger().info(PREFIXO + "§aConexão Mysql fechada com sucesso");
-                plugin.getLogger().info("------------------------------------");
+                conexaoFechadaMsg();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
-                plugin.getLogger().info("-----------------------------------------------------------");
-                plugin.getLogger().info(PREFIXO + "§cTivemos um problema ao tentar fechar a conexão Mysql");
-                plugin.getLogger().info("-----------------------------------------------------------");
+                problemaAoFecharConexaoMsg();
             }
         }
     }
 
     public static void createTable() {
         if(con != null) {
-            PreparedStatement stm = null;
-            String sql = "CREATE TABLE IF NOT EXISTS `ImpCash`(`Player` VARCHAR(64), `Amount` DOUBLE)";
+            PreparedStatement stm;
             try {
-                stm = con.prepareStatement(sql);
+                stm = con.prepareStatement(CREATE_TABLE_QUERY);
                 stm.executeUpdate();
-                plugin.getLogger().info(PREFIXO + "§aTabela carregada com sucesso.");
+                plugin.getLogger().info(PREFIXO + TABELA_CARREGADA);
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
-                plugin.getLogger().info(PREFIXO + "§cErro ao carregar tabela.");
+                plugin.getLogger().info(PREFIXO + ERRO_AO_CARREGAR_TABELA);
             }
         }
     }

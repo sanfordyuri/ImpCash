@@ -1,17 +1,18 @@
 package br.com.impalinha.Service.CashKey;
 
+import br.com.impalinha.Config.ModificacaoConfig;
 import br.com.impalinha.Main;
 import org.bukkit.plugin.Plugin;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import static br.com.impalinha.Constantes.KEYS_PATH;
+import static br.com.impalinha.Constantes.*;
 
-
+@SuppressWarnings("ALL")
 public class CashKey {
 
-    Plugin plugin = Main.getPlugin(Main.class);
+    final Plugin plugin = Main.getPlugin(Main.class);
     private final String codigo;
     private final BigDecimal valor;
     private final LocalDateTime expíra;
@@ -35,9 +36,8 @@ public class CashKey {
     }
 
     public void salvar() {
-        plugin.getConfig().set(KEYS_PATH+getCodigo()+".Valor", getValor().toString());
-        plugin.getConfig().set(KEYS_PATH+getCodigo()+".Data-Expira", getExpíra().toString());
-        plugin.saveConfig();
-        plugin.reloadConfig();
+        plugin.getConfig().set(KEYS_PATH+getCodigo()+ VALOR, getValor().toString());
+        plugin.getConfig().set(KEYS_PATH+getCodigo()+ DATA_EXPIRA, getExpíra().toString());
+        ModificacaoConfig.atualizaConfig();
     }
 }

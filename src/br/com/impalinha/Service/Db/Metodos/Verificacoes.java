@@ -7,12 +7,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import static br.com.impalinha.Constantes.SELECT_ALL_QUERY;
+
+@SuppressWarnings("LoopStatementThatDoesntLoop")
 public class Verificacoes extends Conexao {
 
     public static boolean containsPlayer(Player player) {
-        PreparedStatement stm = null;
+        PreparedStatement stm;
         try {
-            stm = con.prepareStatement("SELECT * FROM `ImpCash` WHERE `Player` = ?");
+            stm = con.prepareStatement(SELECT_ALL_QUERY);
             stm.setString(1, player.getUniqueId().toString());
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {

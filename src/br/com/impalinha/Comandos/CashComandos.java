@@ -15,11 +15,12 @@ import org.bukkit.entity.Player;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import static br.com.impalinha.Comandos.Mensagens.ComandosMensagens.mensagemCashForPlayers;
+import static br.com.impalinha.Comandos.Mensagens.ComandosMensagens.*;
 import static br.com.impalinha.Constantes.*;
 
 public class CashComandos implements CommandExecutor {
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String str, String[] args) {
 		if(command.getName().equalsIgnoreCase(COMMAND_NAME)) {
@@ -30,40 +31,33 @@ public class CashComandos implements CommandExecutor {
 					mensagemCashForAdmins(player);
 				}
 			} else {
-				if (args[0].equalsIgnoreCase("?")) {
+				if (args[0].equalsIgnoreCase(COMANDO_VERMAIS)) {
 					if (args.length == 1) {
-						player.sendMessage(PREFIXO+"§fOlá, " + player.getName() + ", vou tentar resumir para você a importância do ZoneCash");
-						player.sendMessage(" ");
-						player.sendMessage(" §9» §fEssa é a moeda de troca mais valiosa no servidor inteiro");
-						player.sendMessage(" §9» §fSe você tem ZoneCash o suficiente pode adquirir §BVIPs");
-						player.sendMessage(" §9» §fEm TODOS os eventos você terá vantagens proporcional ao seu Cash");
-						player.sendMessage(" §9» §fCom Cash você pode comprar §nTicket§r §fpara Eventos Exclusivos");
-						player.sendMessage("  ");
-						player.sendMessage(" §9» §eEntendeu agora? não perca tempo e adquira logo, com qualquer valor!");
+						mensagemVerMais(player);
 					}
-				} else if (args[0].equalsIgnoreCase("mostrar")) {
+				} else if (args[0].equalsIgnoreCase(COMANDO_MOSTRARCASH)) {
 					if (args.length == 2) {
 						OfflinePlayer alvo = Bukkit.getOfflinePlayer(args[1]);
 						player.sendMessage(PREFIXO+"§f" + alvo.getName() + " §apossui " + Modificacao.getCash(alvo) + " ZoneCash.");
 					} else {
-						player.sendMessage("§cUse o formato correto! Ex:. /cash mostrar [Jogador]");
+						player.sendMessage(MENSAGEM_USO_CORRETO_MOSTRAR);
 					}
-				} else if(args[0].equalsIgnoreCase("ativar")) {
+				} else if(args[0].equalsIgnoreCase(COMANDO_ATIVAR)) {
 					if (args.length == 2) {
 						String codigo = args[1];
 						if(ModificacaoConfig.containsCodigo(codigo)) {
 							BigDecimal valor = ModificacaoConfig.getValor(codigo);
 							ComandosModificacao.addCash(player, valor);
-							player.sendMessage(PREFIXO + "§aZoneCash ativado com sucesso.");
+							player.sendMessage(PREFIXO + MENSAGEM_ZONECASH_ATIVADO);
 							player.sendMessage("§bO seu novo saldo é de " + Modificacao.getCash(player) + " ZoneCash.");
 							ModificacaoConfig.removerCodigo(codigo);
 						} else {
-							player.sendMessage(PREFIXO + "§cEsse código é invalido.");
+							player.sendMessage(PREFIXO + MENSAGEM_CODIGO_INVALIDO);
 						}
 					} else {
-						player.sendMessage(PREFIXO + "§cUso correto: /cash ativar [Codigo]");
+						player.sendMessage(PREFIXO + MENSAGEM_USO_CORRETO_ATIVAR);
 					}
-				} else if (args[0].equalsIgnoreCase("enviar")) {
+				} else if (args[0].equalsIgnoreCase(COMANDOS_ENVIAR)) {
 					if (args.length == 3) {
 						try {
 							Player alvo = Bukkit.getPlayer(args[1]);
@@ -74,17 +68,17 @@ public class CashComandos implements CommandExecutor {
 								player.sendMessage(PREFIXO + "§aVocê enviou §b" + quantia + " ZoneCash §apara " + alvo.getName());
 								alvo.sendMessage(PREFIXO + player.getName() + "§aenviou §b" + quantia + " ZoneCash §apara você.");
 							} else {
-								player.sendMessage(PREFIXO + "§cVocê nao possui saldo o suficiente.");
+								player.sendMessage(PREFIXO + MENSAGEM_NAO_POSSUI_SALDO);
 							}
 						} catch (Exception e) {
-							player.sendMessage("§cUse o formato correto! Ex:. /cash enviar HadyMan 250");
+							player.sendMessage(USO_CORRETO_ENVIAR);
 						}
 					} else {
-						player.sendMessage("§cUse o formato correto! Ex:. /cash enviar HadyMan 250");
+						player.sendMessage(USO_CORRETO_ENVIAR);
 					}
 				}
 				if (player.hasPermission(PERMISSION_ADMIN)) {
-					if (args[0].equalsIgnoreCase("gerar")) {
+					if (args[0].equalsIgnoreCase(COMANDO_GERAR)) {
 						if (args.length == 3) {
 							try {
 								BigDecimal valor = new BigDecimal(args[1]);
@@ -93,15 +87,15 @@ public class CashComandos implements CommandExecutor {
 								CashKey cashKey = new CashKey(GerarKey.gerarKey(), valor, date.plusDays(dias));
 								cashKey.salvar();
 								player.sendMessage("§aVocê gerou uma nova Key: §b" + cashKey.getCodigo());
-								player.sendMessage("§cEssa key irá se expirar em: " + date.plusDays(dias));
+								player.sendMessage("§cEssa key irá se expirar em (Horario do servidor): " + date.plusDays(dias));
 							} catch (Exception e) {
-								player.sendMessage("§cUse o formato correto! Ex:. /cash gerar 250.00 15");
+								player.sendMessage(MENSAGEM_USO_CORRETO_GERAR);
 								e.printStackTrace();
 							}
 						} else {
-							player.sendMessage("§cUso correto: /cash gerar [Quantidade] [Dias]");
+							player.sendMessage(MENSAGEM_USO_CORRETO_GERAR);
 						}
-					} else if (args[0].equalsIgnoreCase("set")) {
+					} else if (args[0].equalsIgnoreCase(COMANDO_SET)) {
 						if (args.length == 3) {
 							try {
 								Player alvo = Bukkit.getPlayer(args[1]);
@@ -110,13 +104,13 @@ public class CashComandos implements CommandExecutor {
 								alvo.sendMessage(PREFIXO + "§aForças maiores definiram seu saldo para §b" + Modificacao.getCash(player) + " ZoneCash");
 								player.sendMessage(PREFIXO + "§aSaldo enviado com sucesso para §f" +alvo.getName());
 							} catch (Exception e) {
-								player.sendMessage("§cUse o formato correto! Ex:. /cash set [Jogador] [Quantidade]");
+								player.sendMessage(MENSAGEM_USO_CORRETO_SET);
 								e.printStackTrace();
 							}
 						} else {
-							player.sendMessage("§cUse o formato correto! Ex:. /cash set [Jogador] [Quantidade]");
+							player.sendMessage(MENSAGEM_USO_CORRETO_SET);
 						}
-					} else if (args[0].equalsIgnoreCase("remove")) {
+					} else if (args[0].equalsIgnoreCase(COMANDO_REMOVE)) {
 						if (args.length == 3) {
 							try {
 								Player alvo = Bukkit.getPlayer(args[1]);
@@ -124,13 +118,13 @@ public class CashComandos implements CommandExecutor {
 								ComandosModificacao.removeCash(alvo, amount);
 								player.sendMessage(PREFIXO + "§aSaldo removido com sucesso para §f" +alvo.getName());
 							} catch (Exception e) {
-								player.sendMessage("§cUse o formato correto! Ex:. /cash remove [Jogador] [Quantidade]");
+								player.sendMessage(MENSAGEM_USO_CORRETO_REMOVE);
 								e.printStackTrace();
 							}
 						} else {
-							player.sendMessage("§cUse o formato correto! Ex:. /cash remove [Jogador] [Quantidade]");
+							player.sendMessage(MENSAGEM_USO_CORRETO_REMOVE);
 						}
-					} else if (args[0].equalsIgnoreCase("add")) {
+					} else if (args[0].equalsIgnoreCase(COMANDO_ADD)) {
 						if (args.length == 3) {
 							try {
 								Player alvo = Bukkit.getPlayer(args[1]);
@@ -139,11 +133,11 @@ public class CashComandos implements CommandExecutor {
 								player.sendMessage(PREFIXO + "§aSaldo adicionado com sucesso para §f" +alvo.getName());
 								alvo.sendMessage(PREFIXO + "§aForças maiores enviaram §b" + amount + " ZoneCash §apara você.");
 							} catch (Exception e) {
-								player.sendMessage("§cUse o formato correto! Ex:. /cash add [Jogador] [Quantidade]");
+								player.sendMessage(MENSAGEM_USO_CORRETO_ADD);
 								e.printStackTrace();
 							}
 						} else {
-							player.sendMessage("§cUse o formato correto! Ex:. /cash add [Jogador] [Quantidade]");
+							player.sendMessage(MENSAGEM_USO_CORRETO_ADD);
 						}
 					}
 				}
@@ -151,7 +145,6 @@ public class CashComandos implements CommandExecutor {
 		}
 		return false;
 	}
-
 
 
 }

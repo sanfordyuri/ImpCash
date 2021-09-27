@@ -7,15 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47d66528-780f-4d46-97de-18abc134a7d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/br/com/impalinha/Comandos/Mensagens/ComandosMensagens.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Metodos/Mensagens.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ImpCash/ImpCash.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ImpCash/ImpCash.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Comandos/CashComandos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Comandos/CashComandos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Comandos/Metodos/ComandosModificacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Comandos/Metodos/ComandosModificacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Comandos/Mensagens/ComandosMensagens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Comandos/Mensagens/ComandosMensagens.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Config/ModificacaoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Config/ModificacaoConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Constantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Constantes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Service/CashKey/CashKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Service/CashKey/CashKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Service/CashKey/Metodos/GerarKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Service/CashKey/Metodos/GerarKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Conexao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Conexao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Metodos/Criacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Metodos/Criacao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Metodos/Modificacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Metodos/Modificacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Metodos/Verificacoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Metodos/Verificacoes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +36,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="4" />
+  </component>
   <component name="ProjectId" id="1yegQhBFxD7NahFDwAIFaq7wrNK" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
@@ -45,6 +52,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
