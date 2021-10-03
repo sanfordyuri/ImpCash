@@ -7,18 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47d66528-780f-4d46-97de-18abc134a7d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Metodos/Mensagens.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Comandos/CashComandos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Comandos/CashComandos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Comandos/Mensagens/ComandosMensagens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Comandos/Mensagens/ComandosMensagens.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Config/ModificacaoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Config/ModificacaoConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ImpCash/ImpCash.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ImpCash/ImpCash.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Comandos/CashComandos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Comandos/CashComandos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Comandos/Metodos/ComandosModificacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Comandos/Metodos/ComandosModificacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Config/ModificacaoConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Config/ModificacaoConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Constantes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Constantes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Service/CashKey/CashKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Service/CashKey/CashKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Service/CashKey/Metodos/GerarKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Service/CashKey/Metodos/GerarKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Service/Db/Conexao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Service/Db/Conexao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Service/Db/Metodos/Criacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Service/Db/Metodos/Criacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Service/Db/Metodos/Modificacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Service/Db/Metodos/Modificacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Service/Db/Metodos/Verificacoes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImpCash/br/com/impalinha/Service/Db/Metodos/Verificacoes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Constantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Constantes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Service/CashKey/CashKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Service/CashKey/CashKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Service/CashKey/Metodos/GerarKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Service/CashKey/Metodos/GerarKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Conexao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Conexao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Metodos/Criacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Metodos/Criacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Metodos/Modificacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Metodos/Modificacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Eventos/JoinEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Eventos/JoinEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Metodos/Verificacoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/impalinha/Service/Db/Metodos/Verificacoes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +42,7 @@
     <option name="selectedIndex" value="4" />
   </component>
   <component name="ProjectId" id="1yegQhBFxD7NahFDwAIFaq7wrNK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>

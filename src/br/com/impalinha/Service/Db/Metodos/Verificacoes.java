@@ -13,9 +13,8 @@ import static br.com.impalinha.Constantes.SELECT_ALL_QUERY;
 public class Verificacoes extends Conexao {
 
     public static boolean containsPlayer(Player player) {
-        PreparedStatement stm;
         try {
-            stm = con.prepareStatement(SELECT_ALL_QUERY);
+            PreparedStatement stm = con.prepareStatement(SELECT_ALL_QUERY);
             stm.setString(1, player.getUniqueId().toString());
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {

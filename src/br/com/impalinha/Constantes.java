@@ -44,7 +44,7 @@ public class Constantes {
 	public static final String MYSQL_PASSWORD = "Mysql.password";
 
 	public static final String JDBC_MYSQL = "jdbc:mysql://";
-	public static final String SQL_10440256 = ":3306/sql10440256";
+	public static final String SQL_10440256 = ":3306/s203_ImpCash";
 
 	public static final String CREATE_TABLE_QUERY = "CREATE TABLE IF NOT EXISTS `ImpCash`(`Player` VARCHAR(64), `Amount` DOUBLE)";
 	public static final String TABELA_CARREGADA = "§aTabela carregada com sucesso.";

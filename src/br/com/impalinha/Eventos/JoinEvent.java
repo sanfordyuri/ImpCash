@@ -12,7 +12,7 @@ public class JoinEvent implements Listener {
     @EventHandler
     public void onFirstJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
-        if(!Verificacoes.containsPlayer(p)) {
+        if(!p.hasPlayedBefore()) {
             Criacao.create(p);
         }
     }
